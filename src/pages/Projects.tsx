@@ -1,79 +1,80 @@
 import { Layout } from "@/components/Layout";
-import { Section } from "@/components/Section";
 import { projects } from "@/data/profile";
+import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   return (
     <Layout>
-      <div className="mb-8">
-        <h1 className="font-mono text-2xl text-foreground mb-2">
-          ~/projects
+      <section className="py-16">
+        <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+          Projects
         </h1>
-        <p className="text-sm text-muted-foreground font-mono">
-          things i've built and contributed to
+        <p className="text-muted-foreground max-w-2xl">
+          A selection of things I've built and contributed to over the years.
         </p>
-      </div>
+      </section>
 
-      <div className="space-y-6">
-        {projects.map((project) => (
-          <article
-            key={project.name}
-            className="group border border-border rounded-lg p-5 hover:border-primary/30 transition-colors"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-              <div>
-                <h2 className="font-mono text-lg text-foreground group-hover:text-primary transition-colors">
-                  {project.name}
-                </h2>
-                <p className="text-sm text-muted-foreground">
-                  {project.description}
-                </p>
-              </div>
-              <span className="font-mono text-xs text-muted-foreground shrink-0">
-                {project.period}
-              </span>
-            </div>
-
-            <ul className="space-y-1 mb-4">
-              {project.highlights.map((highlight, i) => (
-                <li
-                  key={i}
-                  className="font-mono text-sm text-muted-foreground flex items-start gap-2"
-                >
-                  <span className="text-primary shrink-0">→</span>
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="font-mono text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
-                >
-                  {tech}
+      <section className="pb-16">
+        <div className="space-y-12">
+          {projects.map((project) => (
+            <article
+              key={project.name}
+              className="group border-t border-border pt-8"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                <div>
+                  <h2 className="font-serif text-xl text-foreground group-hover:text-primary transition-colors">
+                    {project.name}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {project.description}
+                  </p>
+                </div>
+                <span className="text-sm text-muted-foreground shrink-0">
+                  {project.period}
                 </span>
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
+              </div>
 
-      <Section title="more coming soon" className="mt-12">
-        <p className="font-mono text-sm text-muted-foreground">
-          Currently working on more projects. Check back later or{" "}
+              <ul className="space-y-2 mb-4">
+                {project.highlights.map((highlight, i) => (
+                  <li
+                    key={i}
+                    className="text-muted-foreground flex items-start gap-2"
+                  >
+                    <span className="text-primary shrink-0">→</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-12 border-t border-border">
+        <p className="text-muted-foreground">
+          Currently working on more projects.{" "}
           <a
             href="https://github.com/yogendrasankhla"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className="inline-flex items-center gap-1 text-primary hover:underline"
           >
-            follow me on GitHub
-          </a>{" "}
-          for updates.
+            Follow me on GitHub <ArrowRight className="w-3 h-3" />
+          </a>
         </p>
-      </Section>
+      </section>
     </Layout>
   );
 };

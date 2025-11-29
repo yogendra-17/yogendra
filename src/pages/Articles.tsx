@@ -1,68 +1,68 @@
 import { Layout } from "@/components/Layout";
-import { Section } from "@/components/Section";
 import { articles } from "@/data/profile";
+import { ArrowUpRight } from "lucide-react";
 
 const Articles = () => {
   return (
     <Layout>
-      <div className="mb-8">
-        <h1 className="font-mono text-2xl text-foreground mb-2">
-          ~/articles
+      <section className="py-16">
+        <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
+          Reading List
         </h1>
-        <p className="text-sm text-muted-foreground font-mono">
-          interesting reads and learning resources
+        <p className="text-muted-foreground max-w-2xl">
+          Interesting articles and resources I've been reading lately.
         </p>
-      </div>
+      </section>
 
-      <Section title="reading list">
-        <div className="space-y-4">
-          {articles.map((article) => (
-            <a
-              key={article.title}
-              href={article.link}
-              className="group block border border-border rounded-lg p-4 hover:border-primary/30 hover:bg-muted/20 transition-all"
+      <section className="pb-16">
+        <div className="space-y-8">
+          {articles.map((article, index) => (
+            <article
+              key={index}
+              className="group border-t border-border pt-6"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+              <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className="font-mono text-sm text-foreground group-hover:text-primary transition-colors">
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-serif text-lg text-foreground group-hover:text-primary transition-colors"
+                  >
                     {article.title}
-                  </h3>
-                  <p className="font-mono text-xs text-muted-foreground mt-1">
+                    <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">
                     {article.source}
                   </p>
                 </div>
-                <span className="font-mono text-xs text-muted-foreground shrink-0">
-                  {article.date}
+                <span className="text-sm text-muted-foreground shrink-0">
+                  {new Date(article.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  })}
                 </span>
               </div>
               <div className="flex gap-2 mt-3">
                 {article.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-xs px-2 py-0.5 bg-muted rounded text-muted-foreground"
+                    className="text-xs px-2 py-1 bg-muted rounded text-muted-foreground"
                   >
-                    #{tag}
+                    {tag}
                   </span>
                 ))}
               </div>
-            </a>
+            </article>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section title="add your own">
-        <div className="border border-dashed border-border rounded-lg p-6 text-center">
-          <p className="font-mono text-sm text-muted-foreground mb-2">
-            This section can be expanded to include:
-          </p>
-          <ul className="font-mono text-xs text-muted-foreground/70 space-y-1">
-            <li>→ Book reviews</li>
-            <li>→ Technical blog posts</li>
-            <li>→ Research papers</li>
-            <li>→ Conference talks</li>
-          </ul>
-        </div>
-      </Section>
+      <section className="py-12 border-t border-border">
+        <p className="text-muted-foreground">
+          This list updates as I discover new content. Check back for more.
+        </p>
+      </section>
     </Layout>
   );
 };
