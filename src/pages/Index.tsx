@@ -1,88 +1,87 @@
 import { Layout } from "@/components/Layout";
-import { profile, skills, experience } from "@/data/profile";
+import { profile } from "@/data/profile";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="py-16 md:py-24">
-        <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight max-w-3xl">
-          I am a blockchain developer and security engineer building secure infrastructure for decentralized systems.
-        </h1>
-        
-        <p className="mt-8 text-muted-foreground leading-relaxed max-w-2xl">
-          {profile.bio}
-        </p>
+      <section className="flex flex-col items-center justify-center min-h-[70vh] py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Photo */}
+          <div className="mb-8">
+            <img
+              src={profile.photo}
+              alt={profile.name}
+              className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-border shadow-lg"
+            />
+          </div>
 
-        <Link 
-          to="/experience" 
-          className="inline-flex items-center gap-2 mt-8 text-primary hover:underline"
-        >
-          View my experience <ArrowRight className="w-4 h-4" />
-        </Link>
-      </section>
+          {/* Name */}
+          <h1 className="font-serif text-4xl md:text-5xl text-foreground mb-6">
+            {profile.name}
+          </h1>
 
-      {/* Current Role */}
-      <section className="py-12 border-t border-border">
-        <h2 className="font-serif text-2xl text-foreground mb-6">Currently</h2>
-        <div>
-          <h3 className="text-lg font-medium text-foreground">
-            {experience[0].role}
-          </h3>
-          <p className="text-muted-foreground">
-            {experience[0].company} · {experience[0].location}
+          {/* Bio */}
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            Hi! I'm Yogendra, a software engineer at <span className="text-foreground font-medium">Silence Labs</span> where
+            I work at the intersection of cryptography, distributed systems, and cutting-edge security. I build
+            privacy-preserving infrastructure, from multi-party computation protocols to figuring out communication between agents in secure way.
           </p>
-          <p className="text-sm text-muted-foreground mt-1">
-            {experience[0].period}
+
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            I graduated from <span className="text-foreground font-medium">BITS Pilani</span> in 2023 with a degree in
+            Electronics and Instrumentation. Before Silence Labs, I worked at <span className="text-foreground font-medium">Zluri</span> (enterprise
+            SaaS automation), contributed to open-source through <span className="text-foreground font-medium">Summer of Bitcoin</span>,
+            and was part of the <span className="text-foreground font-medium">ETH India Fellowship</span> (top 0.5% of applicants).
           </p>
-        </div>
-      </section>
 
-      {/* Skills */}
-      <section className="py-12 border-t border-border">
-        <h2 className="font-serif text-2xl text-foreground mb-6">Expertise</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-sm font-medium text-foreground mb-3">Languages</h3>
-            <p className="text-muted-foreground">
-              {skills.languages.join(", ")}
-            </p>
-          </div>
-          <div>
-            <h3 className="text-sm font-medium text-foreground mb-3">Blockchain</h3>
-            <p className="text-muted-foreground">
-              {skills.blockchain.join(", ")}
-            </p>
-          </div>
-          <div>
-            <h3 className="text-sm font-medium text-foreground mb-3">Frameworks</h3>
-            <p className="text-muted-foreground">
-              {skills.frameworks.join(", ")}
-            </p>
-          </div>
-          <div>
-            <h3 className="text-sm font-medium text-foreground mb-3">Tools</h3>
-            <p className="text-muted-foreground">
-              {skills.tools.join(", ")}
-            </p>
-          </div>
-        </div>
-      </section>
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+            My work spans from building beautiful UI to working on complex backends,building everything from distributed systems to various protocol used
+            in production. When I'm not coding, you'll find me playing badminton, exploring personal finance, or working
+            on side projects.
+          </p>
 
-      {/* Contact */}
-      <section className="py-12 border-t border-border">
-        <h2 className="font-serif text-2xl text-foreground mb-6">Get in touch</h2>
-        <div className="space-y-2">
-          <p className="text-muted-foreground">
-            <a href={`mailto:${profile.email}`} className="text-primary hover:underline">
-              {profile.email}
+          {/* Links */}
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <a
+              href={`mailto:${profile.email}`}
+              className="text-primary hover:underline"
+            >
+              Email
             </a>
-          </p>
-          <p className="text-muted-foreground">
-            {profile.location}
-          </p>
+            <span className="text-muted-foreground">/</span>
+            <Link
+              to="/experience"
+              className="text-primary hover:underline"
+            >
+              Work Experience
+            </Link>
+            <span className="text-muted-foreground">/</span>
+            <Link
+              to="/projects"
+              className="text-primary hover:underline"
+            >
+              Projects
+            </Link>
+            <span className="text-muted-foreground">/</span>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              GitHub
+            </a>
+            <span className="text-muted-foreground">/</span>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
     </Layout>
