@@ -2,10 +2,11 @@ export const profile = {
   name: "Yogendra Sankhla",
   title: "Software Engineer",
   location: "Bangalore, India",
-  email: "f20190287g@alumni.bits-pilani.ac.in",
+  email: "yogisankhala17@gmail.com",
   phone: "+91 7014759453",
-  linkedin: "https://linkedin.com/in/yogendrasankhla",
+  linkedin: "https://www.linkedin.com/in/yogendra-sankhla-435689164/",
   github: "https://github.com/yogendrasankhla",
+  twitter: "https://x.com/yogendra__17",
   photo: "/yogendra/images/yogendra-photo.jpg",
   bio: `Software engineer specializing in distributed systems, cryptography, and full-stack development. 
 Building secure, scalable infrastructure across multiple domains — from multi-party computation protocols 

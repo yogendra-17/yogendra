@@ -81,6 +81,15 @@ const Index = () => {
             >
               LinkedIn
             </a>
+            <span className="text-muted-foreground">/</span>
+            <a
+              href={profile.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Twitter
+            </a>
           </div>
         </div>
       </section>
