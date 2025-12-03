@@ -5,7 +5,7 @@ export const profile = {
   email: "yogisankhala17@gmail.com",
   phone: "+91 7014759453",
   linkedin: "https://www.linkedin.com/in/yogendra-sankhla-435689164/",
-  github: "https://github.com/yogendrasankhla",
+  github: "https://github.com/yogendra-17",
   twitter: "https://x.com/yogendra__17",
   photo: "/yogendra/images/yogendra-photo.jpg",
   bio: `Software engineer specializing in distributed systems, cryptography, and full-stack development. 
