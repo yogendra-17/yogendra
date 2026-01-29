@@ -189,6 +189,7 @@ export interface Project {
   track: ProjectTrack[];
 }
 
+
 export const projects: Project[] = [
   {
     name: "Eliza Framework Integration",
