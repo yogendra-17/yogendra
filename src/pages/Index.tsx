@@ -42,7 +42,7 @@ const Index = () => {
           </p>
 
           {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <a
               href={`mailto:${profile.email}`}
               className="text-primary hover:underline"
@@ -71,6 +71,15 @@ const Index = () => {
               className="text-primary hover:underline"
             >
               GitHub
+            </a>
+            <span className="text-muted-foreground">/</span>
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Resume
             </a>
             <span className="text-muted-foreground">/</span>
             <a

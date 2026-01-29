@@ -5,6 +5,7 @@ export const profile = {
   email: "yogisankhala17@gmail.com",
   phone: "+91 7014759453",
   linkedin: "https://www.linkedin.com/in/yogendra-sankhla-435689164/",
+  resume: "/yogendra/Yogendra.pdf",
   github: "https://github.com/yogendra-17",
   twitter: "https://x.com/yogendra__17",
   photo: "/yogendra/images/yogendra-photo.jpg",
@@ -21,8 +22,9 @@ export const experience = [
     period: "Dec 2022 - Present · 3 yrs 1 mo",
     highlights: [
       "Developed software utilizing Secure Multi-Party Computation (MPC) protocols to enhance data privacy and security across distributed systems",
+      "Architected AP3-a privacy-preserving infrastructure enabling autonomous AI agents to securely collaborate on sensitive computations without revealing private data, supporting multi-agent use cases like supply chain optimization (secure dot product), customer screening (private set intersection), and data sharing across competitive industries using Python + Rust, integrating with Google ADK, CrewAI, and LangChain",
       "Integrated MPC-based permissioning into AI agentic frameworks (Eliza), enabling secure session key management for autonomous agent transactions",
-      "Researched and implemented Google's AP3 (Agent-to-Agent Payment Protocol) with MPC support for privacy-preserving multi-agent collaboration",
+      "Researched and implemented various integration on Google's AP2 (Agent-to-Agent Payment Protocol) with MPC support for privacy-preserving multi-agent collaboration",
       "Built MPC + Account Abstraction integration kits for Biconomy, Stackup, and Alchemy SDKs, eliminating single points of failure in smart contract accounts",
       "Developed Silent Shard MetaMask Snap providing 2FA-style transaction approval with sub-20ms latency, reducing key exposure by 90%",
       "Contributed to ShardSafe project: distributed key management system using Shamir Secret Sharing for non-custodial recovery",
@@ -189,6 +191,35 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Eliza Framework Integration",
+    description: "Secure permissioning for AI agentic systems using MPC",
+    period: "2024",
+    tech: ["TypeScript", "MPC", "AI Agents", "Session Management"],
+    highlights: [
+      "Integrated permission engine with MPC signer for AI agent transaction approval",
+      "Developed session key management allowing agents to make autonomous purchases within defined limits",
+      "Built using Silent Network Protocol TSS 2/3 for distributed authorization",
+      "Demonstrated secure agent-to-commerce interaction without compromising user keys",
+    ],
+    link: "https://github.com/silence-laboratories/elizaSl",
+    image: "/images/projects/eliza.svg",
+    track: ["ai-agents", "security-crypto"],
+  },
+  {
+    name: "AP3 Protocol Research",
+    description: "Privacy-preserving multi-agent collaboration protocol",
+    period: "2024",
+    tech: ["MPC", "Multi-Agent Systems", "Privacy Protocols"],
+    highlights: [
+      "Researched Google's A2A,AP2 protocol end-to-end",
+      "Made additions to support secure multi-agent collaboration using MPC",
+      "Built proposal for AP3(secure multi-agent collabration)",
+      "Featured multiple agents collaborating while preserving data privacy",
+    ],
+    image: "/images/projects/ap3.svg",
+    track: ["ai-agents", "security-crypto", "distributed-systems"],
+  },
+  {
     name: "0xBridge Core Protocol",
     description: "Open-source distributed systems library for secure cross-chain asset transfers",
     period: "Oct 2024 - Jan 2025",
@@ -250,35 +281,8 @@ export const projects: Project[] = [
     image: "/images/projects/mpc-aa.svg",
     track: ["security-crypto", "distributed-systems"],
   },
-  {
-    name: "Eliza Framework Integration",
-    description: "Secure permissioning for AI agentic systems using MPC",
-    period: "2024",
-    tech: ["TypeScript", "MPC", "AI Agents", "Session Management"],
-    highlights: [
-      "Integrated permission engine with MPC signer for AI agent transaction approval",
-      "Developed session key management allowing agents to make autonomous purchases within defined limits",
-      "Built using Silent Network Protocol TSS 2/3 for distributed authorization",
-      "Demonstrated secure agent-to-commerce interaction without compromising user keys",
-    ],
-    link: "https://github.com/silence-laboratories/elizaSl",
-    image: "/images/projects/eliza.svg",
-    track: ["ai-agents", "security-crypto"],
-  },
-  {
-    name: "AP3 Protocol Research",
-    description: "Privacy-preserving multi-agent collaboration protocol",
-    period: "2024",
-    tech: ["MPC", "Multi-Agent Systems", "Privacy Protocols"],
-    highlights: [
-      "Researched Google's Agent-to-Agent Payment (AP3) protocol end-to-end",
-      "Made additions to support secure multi-agent collaboration using MPC",
-      "Built demos: Private Set Intersection, FMCG supply chain, Privacy-preserving dark pools",
-      "Featured multiple agents collaborating while preserving data privacy",
-    ],
-    image: "/images/projects/ap3.svg",
-    track: ["ai-agents", "security-crypto", "distributed-systems"],
-  },
+  
+  
   {
     name: "ShardSafe",
     description: "Distributed key storage and recovery system",
